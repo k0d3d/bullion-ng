@@ -2,7 +2,7 @@ pragma solidity ^0.5.11;
 
 import "multi-token-standard/contracts/interfaces/IERC1155TokenReceiver.sol";
 
-import "../CreatureAccessoryFactory.sol";
+import "../Bullion.sol";
 
 
 contract TestForReentrancyAttack is IERC1155TokenReceiver {
@@ -51,7 +51,7 @@ contract TestForReentrancyAttack is IERC1155TokenReceiver {
         if(balance < totalToMint)
         {
             // 1 is the factory lootbox option, not the token id
-            CreatureAccessoryFactory(factoryAddress)
+            BullionCollectible(factoryAddress)
                 .mint(1, address(this), 1, "");
         }
         return ERC1155_RECEIVED_SIG;

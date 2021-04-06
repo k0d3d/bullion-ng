@@ -30,10 +30,13 @@
     "web3": "^1.0.0-beta.34"
   },
   "engines": {
-    "node": "12.18.x",
-    "yarn": "1.22.4"
+    "node": "12.18.x"
   },
   "devDependencies": {
-    "eslint": "^6.8.0"
+    "eslint": "^6.8.0",
+    "chai": "4.2.0",
+    "chai-as-promised": "7.1.1",
+    "chai-bignumber": "3.0.0",
+    "mocha": "^8.3.2"
   }
 }

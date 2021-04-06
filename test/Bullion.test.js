@@ -10,9 +10,12 @@ require('chai')
 contract('Bullion NFT', () => {
 
   let bullion 
+  let targetUri
+
 
   before(async () => {
     bullion = await Bullion.deployed()
+    targetUri = 'https://gateway.pinata.cloud/ipfs/QmRYj2GsLdcESWuJkHrUy5Vs2urwTwtzwGAUBME6vGEx9F'
   })
 
   describe('deployment', async () => {
@@ -40,15 +43,22 @@ contract('Bullion NFT', () => {
       expect(symbol).to.equal('BDART')
     })
 
+    it('should get contract uri after setting', async () => {
+      await bullion.setContractUri(targetUri)
+      const uri = await bullion.contractURI()
+      expect(uri).to.not.be.empty
+      expect(uri).to.equal(targetUri)
+    })
+
 
     it('should create a collectible', async () => {
-      const createCollectible = await bullion.createCollectible('https://gateway.pinata.cloud/ipfs/QmRYj2GsLdcESWuJkHrUy5Vs2urwTwtzwGAUBME6vGEx9F')
+      const createCollectible = await bullion.createCollectible(targetUri)
       // console.log(createCollectible)
       expect(createCollectible).to.not.be.empty
-      // expect(createCollectible.receipt.transactionHash).to.not.be.empty
-      // expect(createCollectible.receipt.transactionHash).to.not.be.null
-      // expect(createCollectible.receipt.transactionHash).to.not.be.undefined
-      expect(createCollectible.getLastTokenUri()).to.not.be.undefined
+      expect(createCollectible.receipt.transactionHash).to.not.be.empty
+      expect(createCollectible.receipt.transactionHash).to.not.be.null
+      expect(createCollectible.receipt.transactionHash).to.not.be.undefined
+      // expect(createCollectible.getLastTokenUri()).to.not.be.undefined
     })
   })
 })

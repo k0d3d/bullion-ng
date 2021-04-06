@@ -1,4 +1,4 @@
-pragma solidity 0.6.8;
+pragma solidity ^0.5.0;
 
 import "./ERC721Tradable.sol";
 import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
@@ -7,55 +7,33 @@ import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
  * @title Creature
  * Creature - a contract for my non-fungible creatures.
  */
-
-contract CollectibleBase is ERC721Tradable {
-    string baseURI;
-
-    constructor(
-        string memory _name,
-        string memory _symbol,
-        address _proxyRegistryAddress
-    ) ERC721Tradable(_name, _symbol, _proxyRegistryAddress) {}
-
-    function mint(address account, uint256 tokenId) external {
-        _mint(account, tokenId);
-    }
-
-    function setTokenURI(uint256 tokenId, string memory tokenURI) external {
-        _setTokenURI(tokenId, tokenURI);
-    }
-
-    function setBaseURI(string memory baseURI_) external {
-        baseURI = baseURI_;
-    }
-
-    function _baseURI() internal view override returns (string memory) {
-        return baseURI;
-    }
-}
-
-contract BullionCollectible is CollectibleBase {
+contract BullionCollectible is ERC721Tradable {
+    string contractLink;
 
     constructor(address _proxyRegistryAddress)
-        CollectibleBase(
+        public
+        ERC721Tradable(
             "BullionCollectibleDigitalArt",
             "BDART",
             _proxyRegistryAddress
         )
-    {
-        
+    {}
+
+    function setContractUri(string memory tokenUri) public {
+        contractLink = tokenUri;
     }
 
+    function contractURI() public view returns (string memory) {
+        return contractLink;
+    }
 
     function createCollectible(string memory tokenURI)
         public
-        returns (uint256)
     {
-        uint256 newItemId = _getNextTokenId();
-
-        _safeMint(msg.sender, newItemId);
+        // uint256 newItemId = tokenCounter;
+        // _safeMint(msg.sender, newItemId);
+        // setContractUri(tokenURI);
+        uint256 newItemId = mintTo(msg.sender);
         _setTokenURI(newItemId, tokenURI);
-        _incrementTokenId();
-        return newItemId;
     }
 }

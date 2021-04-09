@@ -6,6 +6,7 @@
   "scripts": {
     "serve": "parcel serve src/index.html",
     "build": "parcel build src/main.js  --out-dir build/js",
+    "lint": "vue-cli-service lint",
     "ganache-cli": "ganache-cli -d -p 7545 --gasLimit=10000000",
     "test": "DEPLOY_ALL=1 truffle test"
   },
@@ -25,12 +26,19 @@
     "web3": "^1.0.0-beta.34"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.18.0",
+    "@typescript-eslint/parser": "^4.18.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-typescript": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0-beta.1",
+    "@vue/eslint-config-airbnb": "^5.0.2",
+    "@vue/eslint-config-typescript": "^7.0.0",
     "chai": "4.2.0",
     "chai-as-promised": "7.1.1",
     "chai-bignumber": "3.0.0",
     "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-vue": "^6.2.2",
     "mocha": "^8.3.2",
     "parcel": "^2.0.0-beta.2",
     "parcel-bundler": "^1.12.5",
@@ -54,5 +62,8 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/k0d3d/bullion-ng.git"
+  },
+  "alias": {
+    "vue" : "./node_modules/vue/dist/vue.common.js"
   }
 }

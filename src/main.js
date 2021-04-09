@@ -1,9 +1,10 @@
 import { ethers } from "ethers";
 import tokenContract from '../build/contracts/BullionCollectible.json';
+import Vue from 'vue'
 
 
 
-document.addEventListener("DOMContentLoaded", function (event) {
+document.addEventListener("DOMContentLoaded", function () {
   //do work
   console.log("running every day ");
   const buttonMint = document.querySelector("#bullion-admin-mint .mint-btn");
@@ -70,7 +71,7 @@ let myToken = {
   imageBuffer: '',
   ipfsImageHash: '',
   ipfsImageUrl: '',
-  metadataBuffer: metadata,
+  metadataBuffer: "",
   ipfsMetadataHash: '',
   ipfsMetadataUrl: '',
   recipientAddress: '',
@@ -121,3 +122,74 @@ const checkNetwork = async (provider) => {
     myContext.tokenAddress = "";
   }
 };
+
+
+const mintToken = async () => {
+
+  if (!App.exists(this.state.myToken.abi) ||
+      !App.exists(this.state.web3ctx.tokenAddress) ||
+      !App.exists(this.state.myToken.recipientAddress) ||
+      !App.exists(this.state.myToken.ipfsImageUrl) ||
+      !App.exists(this.state.myToken.ipfsMetadataUrl)) {
+      console.log('Required input fields are missing!');
+      return false;
+  }
+
+  try {
+      this.setState({
+          myToken: {
+              ...this.state.myToken,
+              blockNumber: 'waiting..',
+              gasUsed: 'waiting...'
+          }
+      });
+
+      // bring in user's metamask account address
+      const accounts = await web3.eth.getAccounts();
+      const myTokenInstance = new web3.eth.Contract(
+          this.state.myToken.abi,
+          this.state.web3ctx.tokenAddress
+      );
+
+      console.log('Sending from Metamask account: ' + accounts[0] + ' to token address '
+          + myTokenInstance.options.address);
+
+      // see, this https://web3js.readthedocs.io/en/1.0/web3-eth-contract.html#methods-mymethod-send
+      await myTokenInstance.methods.mint(this.state.myToken.recipientAddress, this.state.myToken.ipfsMetadataUrl).send({
+          from: accounts[0]
+      }, (error, txHash) => {
+          console.log('txHash: ' + txHash + ', error: ' + error);
+
+          this.setState({
+              myToken: {
+                  ...this.state.myToken,
+                  txHash: txHash
+              }
+          });
+      });
+
+      // get Transaction Receipt in console on click
+      // See: https://web3js.readthedocs.io/en/1.0/web3-eth.html#gettransactionreceipt
+      await web3.eth.getTransactionReceipt(this.state.myToken.txHash, (err, txReceipt) => {
+          if (txReceipt) {
+              this.setState({
+                  myToken: {
+                      ...this.state.myToken,
+                      txReceipt: txReceipt
+                  }
+              });
+          }
+      });
+
+  } catch (e) {
+      console.log('Error: ' + e);
+  }
+};
+
+
+var app = new Vue({
+  el: '#wpbody',
+  data: {
+    message: 'Hello Vue!'
+  }
+})

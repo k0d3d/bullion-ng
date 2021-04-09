@@ -6,7 +6,8 @@
   "scripts": {
     "ganache-cli": "ganache-cli -d -p 7545 --gasLimit=10000000",
     "test": "DEPLOY_ALL=1 truffle test",
-    "build": "parcel build src/main.js  --out-dir build/js"
+    "build": "parcel build src/main.js  --out-dir build/js",
+    "serve": "parcel serve src/index.html"
 
   },
   "repository": {

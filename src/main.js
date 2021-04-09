@@ -81,25 +81,25 @@ const checkNetwork = async (provider) => {
   myContext.lastBlockNumber = await provider.getBlockNumber();
   myContext.currentBalance = await provider.getBalance(accounts[0]);
 
-  const { netId, chainId } = await provider.getNetwork();
+  const { name, chainId } = await provider.getNetwork();
   myContext.networkId = chainId;
-  myContext.networkName = web3networks[netId]
-    ? web3networks[netId].name
+  myContext.networkName = web3networks[chainId]
+    ? web3networks[chainId].name
     : "unknown";
-  myContext.etherscanUrl = web3networks[netId]
-    ? web3networks[netId].etherscanUrl
+  myContext.etherscanUrl = web3networks[chainId]
+    ? web3networks[chainId].etherscanUrl
     : "unknown";
 
-  if (tokenContract.networks[netId]) {
+  if (tokenContract.networks[chainId]) {
     // attempt to load contract address deployed on this network
-    let newAddress = tokenContract.networks[netId].address
-      ? tokenContract.networks[netId].address
+    let newAddress = tokenContract.networks[chainId].address
+      ? tokenContract.networks[chainId].address
       : "";
 
     console.log("Using contract at address '" + newAddress + "'");
     myContext.tokenAddress = newAddress;
   } else {
-    console.log("No contract deployed on network " + netId);
+    console.log("No contract deployed on network " + chainId);
     myContext.tokenAddress = "";
   }
 };

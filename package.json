@@ -2,24 +2,14 @@
   "name": "opensea-creatures",
   "version": "1.0.0",
   "description": "OpenSea's smart contracts, including ERC721 templates, factories, and the storefront builder.",
-  "main": "index.js",
-  "scripts": {
-    "ganache-cli": "ganache-cli -d -p 7545 --gasLimit=10000000",
-    "test": "DEPLOY_ALL=1 truffle test",
-    "build": "parcel build src/main.js  --out-dir build/js",
-    "serve": "parcel serve src/index.html"
-
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ProjectOpenSea/opensea-creatures.git"
-  },
   "author": "support@opensea.io",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ProjectOpenSea/opensea-creatures/issues"
+  "scripts": {
+    "serve": "parcel serve src/index.html",
+    "build": "parcel build src/main.js  --out-dir build/js",
+    "ganache-cli": "ganache-cli -d -p 7545 --gasLimit=10000000",
+    "test": "DEPLOY_ALL=1 truffle test"
   },
-  "homepage": "https://github.com/ProjectOpenSea/opensea-creatures#readme",
+  "main": "index.js",
   "dependencies": {
     "@0x/subproviders": "^2.1.4",
     "eth-gas-reporter": "^0.2.17",
@@ -31,19 +21,19 @@
     "truffle-assertions": "^0.9.2",
     "truffle-flattener": "^1.4.2",
     "truffle-hdwallet-provider": "1.0.5",
+    "vue": "^3.0.0-beta.1",
     "web3": "^1.0.0-beta.34"
   },
-  "engines": {
-    "node": "12.18.x"
-  },
   "devDependencies": {
+    "@vue/compiler-sfc": "^3.0.0-beta.1",
     "chai": "4.2.0",
     "chai-as-promised": "7.1.1",
     "chai-bignumber": "3.0.0",
     "eslint": "^6.8.0",
     "mocha": "^8.3.2",
     "parcel": "^2.0.0-beta.2",
-    "parcel-bundler": "^1.12.5"
+    "parcel-bundler": "^1.12.5",
+    "vue-cli-plugin-vue-next": "~0.1.4"
   },
   "browserslist": [
     "last 3 and_chr versions",
@@ -51,5 +41,17 @@
     "last 3 opera versions",
     "last 3 ios_saf versions",
     "last 3 safari versions"
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/ProjectOpenSea/opensea-creatures/issues"
+  },
+  "engines": {
+    "node": "12.18.x"
+  },
+  "homepage": "https://github.com/ProjectOpenSea/opensea-creatures#readme",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProjectOpenSea/opensea-creatures.git"
+  }
 }

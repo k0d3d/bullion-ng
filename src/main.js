@@ -63,6 +63,24 @@ let state = {
   },
 };
 
+
+let myToken = {
+  address: '0x494b2CeE761FdfCd6f5bE1ABefB7A6112B251874',
+  abi: tokenContract.abi,
+  imageBuffer: '',
+  ipfsImageHash: '',
+  ipfsImageUrl: '',
+  metadataBuffer: metadata,
+  ipfsMetadataHash: '',
+  ipfsMetadataUrl: '',
+  recipientAddress: '',
+  newMinterAddress: '',
+  txHash: '',
+  txReceipt: '',
+  blockNumber: '',
+  gasUsed: ''
+}
+
 let networkId = "";
 
 function handleChainChanged(_chainId) {

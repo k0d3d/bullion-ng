@@ -1,20 +1,7 @@
 import { ethers } from "ethers";
+import tokenContract from '../build/contracts/BullionCollectible.json';
 
-/* Add your JavaScript code here.
 
-If you are using the jQuery library, then don't forget to wrap your code inside jQuery.ready() as follows:
-
-jQuery(document).ready(function( $ ){
-    // Your code in here
-});
-
---
-
-If you want to link a JavaScript file that resides on another server (similar to
-<script src="https://example.com/your-js-file.js"></script>), then please use
-the "Add HTML Code" page, as this is a HTML code that links a JavaScript file.
-
-End of comment */ 
 
 document.addEventListener("DOMContentLoaded", function (event) {
   //do work
@@ -30,21 +17,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
     if (provider) {
       checkNetwork(provider)
         .then((e) => {
-        startApp()
-      })
+          startApp();
+        })
         .catch((e) => console.log(e));
     }
   });
-
 });
 
 const startApp = async () => {
+  const chainId = await ethereum.request({ method: "eth_chainId" });
+  handleChainChanged(chainId);
 
-const chainId = await ethereum.request({ method: 'eth_chainId' });
-handleChainChanged(chainId);
-
-ethereum.on('chainChanged', handleChainChanged);
-}
+  ethereum.on("chainChanged", handleChainChanged);
+};
 
 const web3networks = {
   1: {
@@ -66,35 +51,29 @@ const web3networks = {
 };
 
 let state = {
-  web3ctx:{
+  web3ctx: {
     networkId: "",
-  networkName: "",
-  etherscanUrl: "",
-  activeWallet: "",
-  lastBlockNumber: "",
-  currentBalance: "",
-  tokenAddress: "0x494b2CeE761FdfCd6f5bE1ABefB7A6112B251874",
-  ipfsGateway: "https://ipfs.infura.io/ipfs/",
-  }
-
+    networkName: "",
+    etherscanUrl: "",
+    activeWallet: "",
+    lastBlockNumber: "",
+    currentBalance: "",
+    tokenAddress: "0x494b2CeE761FdfCd6f5bE1ABefB7A6112B251874",
+    ipfsGateway: "https://ipfs.infura.io/ipfs/",
+  },
 };
 
 let networkId = "";
 
 function handleChainChanged(_chainId) {
-  // We recommend reloading the page, unless you must do otherwise
-//   debugger
-//   
-  if(networkId.length) {
+  if (networkId.length) {
     window.location.reload();
   } else {
-	networkId = _chainId
+    networkId = _chainId;
   }
-} 
-
+}
 
 const checkNetwork = async (provider) => {
-
   // first update the values that can change while connected
   let myContext = state.web3ctx;
   let accounts = await ethereum.request({ method: "eth_requestAccounts" });
@@ -102,7 +81,7 @@ const checkNetwork = async (provider) => {
   myContext.lastBlockNumber = await provider.getBlockNumber();
   myContext.currentBalance = await provider.getBalance(accounts[0]);
 
-  const {netId, chainId } = await provider.getNetwork();
+  const { netId, chainId } = await provider.getNetwork();
   myContext.networkId = chainId;
   myContext.networkName = web3networks[netId]
     ? web3networks[netId].name
@@ -110,5 +89,17 @@ const checkNetwork = async (provider) => {
   myContext.etherscanUrl = web3networks[netId]
     ? web3networks[netId].etherscanUrl
     : "unknown";
-  
+
+  if (tokenContract.networks[netId]) {
+    // attempt to load contract address deployed on this network
+    let newAddress = tokenContract.networks[netId].address
+      ? tokenContract.networks[netId].address
+      : "";
+
+    console.log("Using contract at address '" + newAddress + "'");
+    myContext.tokenAddress = newAddress;
+  } else {
+    console.log("No contract deployed on network " + netId);
+    myContext.tokenAddress = "";
+  }
 };

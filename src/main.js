@@ -51,62 +51,49 @@ const checkNetwork = async (provider, vueInstance) => {
 };
 
 
-const attemptMint = async () => {
-
-  if (!exists(this.state.myToken.abi) ||
-      !exists(this.state.web3ctx.tokenAddress) ||
-      !exists(this.state.myToken.recipientAddress) ||
-      !exists(this.state.myToken.ipfsImageUrl) ||
-      !exists(this.state.myToken.ipfsMetadataUrl)) {
+async function attemptMint() {
+  const self = this
+  if (!exists(this.myToken.abi) ||
+      !exists(this.web3ctx.tokenAddress) ||
+      !exists(this.myToken.recipientAddress)
+      // !exists(this.myToken.ipfsImageUrl) ||
+      // !exists(this.myToken.ipfsMetadataUrl)
+      ) {
       console.log('Required input fields are missing!');
       return false;
   }
 
   try {
-      this.setState({
-          myToken: {
-              ...this.state.myToken,
-              blockNumber: 'waiting..',
-              gasUsed: 'waiting...'
-          }
-      });
+    self.myToken.blockNumber = 'waiting..'
+    self.myToken.gasUsed = 'waiting..'
 
       // bring in user's metamask account address
-      const accounts = await web3.eth.getAccounts();
-      const myTokenInstance = new web3.eth.Contract(
-          this.state.myToken.abi,
-          this.state.web3ctx.tokenAddress
+      const accounts = await ethereum.request({ method: "eth_requestAccounts" });
+      const myTokenInstance = new ethers.Contract(
+        self.web3ctx.tokenAddress,
+          self.myToken.abi,
+          self.signer
       );
 
       console.log('Sending from Metamask account: ' + accounts[0] + ' to token address '
-          + myTokenInstance.options.address);
+          + myTokenInstance.address);
 
       // see, this https://web3js.readthedocs.io/en/1.0/web3-eth-contract.html#methods-mymethod-send
-      await myTokenInstance.methods.mint(this.state.myToken.recipientAddress, this.state.myToken.ipfsMetadataUrl).send({
-          from: accounts[0]
-      }, (error, txHash) => {
-          console.log('txHash: ' + txHash + ', error: ' + error);
+      self.myToken.tx = await myTokenInstance.createCollectible(self.myToken.ipfsMetadataUrl)
+      // this.provider.sendTransaction(createNft)
 
-          this.setState({
-              myToken: {
-                  ...this.state.myToken,
-                  txHash: txHash
-              }
-          });
-      });
+
+      
 
       // get Transaction Receipt in console on click
       // See: https://web3js.readthedocs.io/en/1.0/web3-eth.html#gettransactionreceipt
-      await web3.eth.getTransactionReceipt(this.state.myToken.txHash, (err, txReceipt) => {
-          if (txReceipt) {
-              this.setState({
-                  myToken: {
-                      ...this.state.myToken,
-                      txReceipt: txReceipt
-                  }
-              });
-          }
-      });
+      const txReceipt = await ethereum.request({
+        method: "eth_requestAccounts",
+        params: [
+          self.myToken.tx.hash
+        ]
+      })
+      self.myToken.txReceipt  = txReceipt
 
   } catch (e) {
       console.log('Error: ' + e);
@@ -117,6 +104,8 @@ const attemptMint = async () => {
 var App = new Vue({
   el: '#wpbody',
   data: () => ({
+    provider: null,
+    signer: null,
     networkId: '',
     web3networks : {
       1: {
@@ -154,8 +143,8 @@ var App = new Vue({
       ipfsImageUrl: '',
       metadataBuffer: "",
       ipfsMetadataHash: '',
-      ipfsMetadataUrl: '',
-      recipientAddress: '',
+      ipfsMetadataUrl: 'https://gateway.pinata.cloud/ipfs/QmRYj2GsLdcESWuJkHrUy5Vs2urwTwtzwGAUBME6vGEx9F',
+      recipientAddress: '0xF37589a8beE6F853d21120A2537050e82747dc7f',
       newMinterAddress: '',
       txHash: '',
       txReceipt: '',
@@ -164,7 +153,10 @@ var App = new Vue({
     }
   }),
   methods: {
-    attemptMint: attemptMint,
+    attemptMint() {
+      const thisattemptMint = attemptMint.bind(this)
+      thisattemptMint()
+    },
     exists,
     clear,
     handleChainChanged (_chainId) {
@@ -180,12 +172,12 @@ var App = new Vue({
     }
   },
   mounted () {
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    this.provider = new ethers.providers.Web3Provider(window.ethereum);
 
-    const signer = provider.getSigner();
+    this.signer = this.provider.getSigner();
     
-    if (provider) {
-      this.checkNetwork(provider)
+    if (this.provider) {
+      this.checkNetwork(this.provider)
         .then((e) => {
           return startApp()
         })

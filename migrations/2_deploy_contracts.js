@@ -1,4 +1,6 @@
 const Bullion = artifacts.require("BullionCollectible");
+// const BullionIssue = artifacts.require("BullionIssue");
+const BullionItem = artifacts.require("BullionItem");
 
 
 module.exports = async (deployer, network) => {
@@ -11,5 +13,7 @@ module.exports = async (deployer, network) => {
   }
 
   await deployer.deploy(Bullion, proxyRegistryAddress, {gas: 5800000});
+  // await deployer.deploy(BullionIssue, proxyRegistryAddress, {gas: 5800000});
+  await deployer.deploy(BullionItem, proxyRegistryAddress, {gas: 5800000});
 
 };

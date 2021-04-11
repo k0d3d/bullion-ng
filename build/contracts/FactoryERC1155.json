@@ -191,14 +191,14 @@
     "absolutePath": "/home/k0d3d/Projects/bullion-js/contracts/IFactoryERC1155.sol",
     "exportedSymbols": {
       "FactoryERC1155": [
-        740
+        790
       ]
     },
-    "id": 741,
+    "id": 791,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 678,
+        "id": 728,
         "literals": [
           "solidity",
           "^",
@@ -214,9 +214,9 @@
         "contractKind": "interface",
         "documentation": "This is a generic factory contract that can be used to mint tokens. The configuration\nfor minting is specified by an _optionId, which can be used to delineate various\nways of minting.",
         "fullyImplemented": false,
-        "id": 740,
+        "id": 790,
         "linearizedBaseContracts": [
-          740
+          790
         ],
         "name": "FactoryERC1155",
         "nodeType": "ContractDefinition",
@@ -224,28 +224,28 @@
           {
             "body": null,
             "documentation": "Returns the name of this factory.",
-            "id": 683,
+            "id": 733,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "name",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 679,
+              "id": 729,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "327:2:3"
             },
             "returnParameters": {
-              "id": 682,
+              "id": 732,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 681,
+                  "id": 731,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 683,
+                  "scope": 733,
                   "src": "353:13:3",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -254,7 +254,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 680,
+                    "id": 730,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "353:6:3",
@@ -269,7 +269,7 @@
               ],
               "src": "352:15:3"
             },
-            "scope": 740,
+            "scope": 790,
             "src": "314:54:3",
             "stateMutability": "view",
             "superFunction": null,
@@ -278,28 +278,28 @@
           {
             "body": null,
             "documentation": "Returns the symbol for this factory.",
-            "id": 688,
+            "id": 738,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "symbol",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 684,
+              "id": 734,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "449:2:3"
             },
             "returnParameters": {
-              "id": 687,
+              "id": 737,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 686,
+                  "id": 736,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 688,
+                  "scope": 738,
                   "src": "475:13:3",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -308,7 +308,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 685,
+                    "id": 735,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "475:6:3",
@@ -323,7 +323,7 @@
               ],
               "src": "474:15:3"
             },
-            "scope": 740,
+            "scope": 790,
             "src": "434:56:3",
             "stateMutability": "view",
             "superFunction": null,
@@ -332,28 +332,28 @@
           {
             "body": null,
             "documentation": "Number of options the factory supports.",
-            "id": 693,
+            "id": 743,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "numOptions",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 689,
+              "id": 739,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "578:2:3"
             },
             "returnParameters": {
-              "id": 692,
+              "id": 742,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 691,
+                  "id": 741,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 693,
+                  "scope": 743,
                   "src": "604:7:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -362,7 +362,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 690,
+                    "id": 740,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "604:7:3",
@@ -377,7 +377,7 @@
               ],
               "src": "603:9:3"
             },
-            "scope": 740,
+            "scope": 790,
             "src": "559:54:3",
             "stateMutability": "view",
             "superFunction": null,
@@ -386,22 +386,22 @@
           {
             "body": null,
             "documentation": "@dev Returns whether the option ID can be minted. Can return false if the developer wishes to\nrestrict a total supply per option ID (or overall).",
-            "id": 702,
+            "id": 752,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "canMint",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 698,
+              "id": 748,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 695,
+                  "id": 745,
                   "name": "_optionId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 702,
+                  "scope": 752,
                   "src": "812:17:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -410,7 +410,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 694,
+                    "id": 744,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "812:7:3",
@@ -424,10 +424,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 697,
+                  "id": 747,
                   "name": "_amount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 702,
+                  "scope": 752,
                   "src": "831:15:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -436,7 +436,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 696,
+                    "id": 746,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "831:7:3",
@@ -452,15 +452,15 @@
               "src": "811:36:3"
             },
             "returnParameters": {
-              "id": 701,
+              "id": 751,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 700,
+                  "id": 750,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 702,
+                  "scope": 752,
                   "src": "895:4:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -469,7 +469,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 699,
+                    "id": 749,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "895:4:3",
@@ -484,7 +484,7 @@
               ],
               "src": "894:6:3"
             },
-            "scope": 740,
+            "scope": 790,
             "src": "795:106:3",
             "stateMutability": "view",
             "superFunction": null,
@@ -493,22 +493,22 @@
           {
             "body": null,
             "documentation": "@dev Returns a URL specifying some metadata about the option. This metadata can be of the\nsame structure as the ERC1155 metadata.",
-            "id": 709,
+            "id": 759,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "uri",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 705,
+              "id": 755,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 704,
+                  "id": 754,
                   "name": "_optionId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 709,
+                  "scope": 759,
                   "src": "1080:17:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -517,7 +517,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 703,
+                    "id": 753,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "1080:7:3",
@@ -533,15 +533,15 @@
               "src": "1079:19:3"
             },
             "returnParameters": {
-              "id": 708,
+              "id": 758,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 707,
+                  "id": 757,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 709,
+                  "scope": 759,
                   "src": "1122:13:3",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -550,7 +550,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 706,
+                    "id": 756,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1122:6:3",
@@ -565,7 +565,7 @@
               ],
               "src": "1121:15:3"
             },
-            "scope": 740,
+            "scope": 790,
             "src": "1067:70:3",
             "stateMutability": "view",
             "superFunction": null,
@@ -574,28 +574,28 @@
           {
             "body": null,
             "documentation": "Indicates that this is a factory contract. Ideally would use EIP 165 supportsInterface()",
-            "id": 714,
+            "id": 764,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "supportsFactoryInterface",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 710,
+              "id": 760,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1288:2:3"
             },
             "returnParameters": {
-              "id": 713,
+              "id": 763,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 712,
+                  "id": 762,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 714,
+                  "scope": 764,
                   "src": "1314:4:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -604,7 +604,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 711,
+                    "id": 761,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "1314:4:3",
@@ -619,7 +619,7 @@
               ],
               "src": "1313:6:3"
             },
-            "scope": 740,
+            "scope": 790,
             "src": "1255:65:3",
             "stateMutability": "view",
             "superFunction": null,
@@ -628,28 +628,28 @@
           {
             "body": null,
             "documentation": "Indicates the Wyvern schema name for assets in this lootbox, e.g. \"ERC1155\"",
-            "id": 719,
+            "id": 769,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "factorySchemaName",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 715,
+              "id": 765,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1451:2:3"
             },
             "returnParameters": {
-              "id": 718,
+              "id": 768,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 717,
+                  "id": 767,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 719,
+                  "scope": 769,
                   "src": "1477:13:3",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -658,7 +658,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 716,
+                    "id": 766,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1477:6:3",
@@ -673,7 +673,7 @@
               ],
               "src": "1476:15:3"
             },
-            "scope": 740,
+            "scope": 790,
             "src": "1425:67:3",
             "stateMutability": "view",
             "superFunction": null,
@@ -682,22 +682,22 @@
           {
             "body": null,
             "documentation": "@dev Mints asset(s) in accordance to a specific address with a particular \"option\". This should be\ncallable only by the contract owner or the owner's Wyvern Proxy (later universal login will solve this).\nOptions should also be delineated 0 - (numOptions() - 1) for convenient indexing.\n@param _optionId the option id\n@param _toAddress address of the future owner of the asset(s)\n@param _amount amount of the option to mint\n@param _data Extra data to pass during safeTransferFrom",
-            "id": 730,
+            "id": 780,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "mint",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 728,
+              "id": 778,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 721,
+                  "id": 771,
                   "name": "_optionId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 730,
+                  "scope": 780,
                   "src": "2065:17:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -706,7 +706,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 720,
+                    "id": 770,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "2065:7:3",
@@ -720,10 +720,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 723,
+                  "id": 773,
                   "name": "_toAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 730,
+                  "scope": 780,
                   "src": "2092:18:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -732,7 +732,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 722,
+                    "id": 772,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2092:7:3",
@@ -747,10 +747,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 725,
+                  "id": 775,
                   "name": "_amount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 730,
+                  "scope": 780,
                   "src": "2120:15:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -759,7 +759,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 724,
+                    "id": 774,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "2120:7:3",
@@ -773,10 +773,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 727,
+                  "id": 777,
                   "name": "_data",
                   "nodeType": "VariableDeclaration",
-                  "scope": 730,
+                  "scope": 780,
                   "src": "2145:20:3",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -785,7 +785,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 726,
+                    "id": 776,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "2145:5:3",
@@ -801,12 +801,12 @@
               "src": "2055:116:3"
             },
             "returnParameters": {
-              "id": 729,
+              "id": 779,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2180:0:3"
             },
-            "scope": 740,
+            "scope": 790,
             "src": "2042:139:3",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -815,22 +815,22 @@
           {
             "body": null,
             "documentation": "////",
-            "id": 739,
+            "id": 789,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "balanceOf",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 735,
+              "id": 785,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 732,
+                  "id": 782,
                   "name": "_owner",
                   "nodeType": "VariableDeclaration",
-                  "scope": 739,
+                  "scope": 789,
                   "src": "2421:14:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -839,7 +839,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 731,
+                    "id": 781,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2421:7:3",
@@ -854,10 +854,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 734,
+                  "id": 784,
                   "name": "_optionId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 739,
+                  "scope": 789,
                   "src": "2437:17:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -866,7 +866,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 733,
+                    "id": 783,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "2437:7:3",
@@ -882,15 +882,15 @@
               "src": "2420:35:3"
             },
             "returnParameters": {
-              "id": 738,
+              "id": 788,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 737,
+                  "id": 787,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 739,
+                  "scope": 789,
                   "src": "2503:7:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -899,7 +899,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 736,
+                    "id": 786,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "2503:7:3",
@@ -914,14 +914,14 @@
               ],
               "src": "2502:9:3"
             },
-            "scope": 740,
+            "scope": 790,
             "src": "2402:110:3",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 741,
+        "scope": 791,
         "src": "226:2386:3"
       }
     ],
@@ -931,14 +931,14 @@
     "absolutePath": "/home/k0d3d/Projects/bullion-js/contracts/IFactoryERC1155.sol",
     "exportedSymbols": {
       "FactoryERC1155": [
-        740
+        790
       ]
     },
-    "id": 741,
+    "id": 791,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 678,
+        "id": 728,
         "literals": [
           "solidity",
           "^",
@@ -954,9 +954,9 @@
         "contractKind": "interface",
         "documentation": "This is a generic factory contract that can be used to mint tokens. The configuration\nfor minting is specified by an _optionId, which can be used to delineate various\nways of minting.",
         "fullyImplemented": false,
-        "id": 740,
+        "id": 790,
         "linearizedBaseContracts": [
-          740
+          790
         ],
         "name": "FactoryERC1155",
         "nodeType": "ContractDefinition",
@@ -964,28 +964,28 @@
           {
             "body": null,
             "documentation": "Returns the name of this factory.",
-            "id": 683,
+            "id": 733,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "name",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 679,
+              "id": 729,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "327:2:3"
             },
             "returnParameters": {
-              "id": 682,
+              "id": 732,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 681,
+                  "id": 731,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 683,
+                  "scope": 733,
                   "src": "353:13:3",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -994,7 +994,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 680,
+                    "id": 730,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "353:6:3",
@@ -1009,7 +1009,7 @@
               ],
               "src": "352:15:3"
             },
-            "scope": 740,
+            "scope": 790,
             "src": "314:54:3",
             "stateMutability": "view",
             "superFunction": null,
@@ -1018,28 +1018,28 @@
           {
             "body": null,
             "documentation": "Returns the symbol for this factory.",
-            "id": 688,
+            "id": 738,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "symbol",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 684,
+              "id": 734,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "449:2:3"
             },
             "returnParameters": {
-              "id": 687,
+              "id": 737,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 686,
+                  "id": 736,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 688,
+                  "scope": 738,
                   "src": "475:13:3",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1048,7 +1048,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 685,
+                    "id": 735,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "475:6:3",
@@ -1063,7 +1063,7 @@
               ],
               "src": "474:15:3"
             },
-            "scope": 740,
+            "scope": 790,
             "src": "434:56:3",
             "stateMutability": "view",
             "superFunction": null,
@@ -1072,28 +1072,28 @@
           {
             "body": null,
             "documentation": "Number of options the factory supports.",
-            "id": 693,
+            "id": 743,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "numOptions",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 689,
+              "id": 739,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "578:2:3"
             },
             "returnParameters": {
-              "id": 692,
+              "id": 742,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 691,
+                  "id": 741,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 693,
+                  "scope": 743,
                   "src": "604:7:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1102,7 +1102,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 690,
+                    "id": 740,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "604:7:3",
@@ -1117,7 +1117,7 @@
               ],
               "src": "603:9:3"
             },
-            "scope": 740,
+            "scope": 790,
             "src": "559:54:3",
             "stateMutability": "view",
             "superFunction": null,
@@ -1126,22 +1126,22 @@
           {
             "body": null,
             "documentation": "@dev Returns whether the option ID can be minted. Can return false if the developer wishes to\nrestrict a total supply per option ID (or overall).",
-            "id": 702,
+            "id": 752,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "canMint",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 698,
+              "id": 748,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 695,
+                  "id": 745,
                   "name": "_optionId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 702,
+                  "scope": 752,
                   "src": "812:17:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1150,7 +1150,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 694,
+                    "id": 744,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "812:7:3",
@@ -1164,10 +1164,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 697,
+                  "id": 747,
                   "name": "_amount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 702,
+                  "scope": 752,
                   "src": "831:15:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1176,7 +1176,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 696,
+                    "id": 746,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "831:7:3",
@@ -1192,15 +1192,15 @@
               "src": "811:36:3"
             },
             "returnParameters": {
-              "id": 701,
+              "id": 751,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 700,
+                  "id": 750,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 702,
+                  "scope": 752,
                   "src": "895:4:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1209,7 +1209,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 699,
+                    "id": 749,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "895:4:3",
@@ -1224,7 +1224,7 @@
               ],
               "src": "894:6:3"
             },
-            "scope": 740,
+            "scope": 790,
             "src": "795:106:3",
             "stateMutability": "view",
             "superFunction": null,
@@ -1233,22 +1233,22 @@
           {
             "body": null,
             "documentation": "@dev Returns a URL specifying some metadata about the option. This metadata can be of the\nsame structure as the ERC1155 metadata.",
-            "id": 709,
+            "id": 759,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "uri",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 705,
+              "id": 755,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 704,
+                  "id": 754,
                   "name": "_optionId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 709,
+                  "scope": 759,
                   "src": "1080:17:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1257,7 +1257,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 703,
+                    "id": 753,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "1080:7:3",
@@ -1273,15 +1273,15 @@
               "src": "1079:19:3"
             },
             "returnParameters": {
-              "id": 708,
+              "id": 758,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 707,
+                  "id": 757,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 709,
+                  "scope": 759,
                   "src": "1122:13:3",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1290,7 +1290,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 706,
+                    "id": 756,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1122:6:3",
@@ -1305,7 +1305,7 @@
               ],
               "src": "1121:15:3"
             },
-            "scope": 740,
+            "scope": 790,
             "src": "1067:70:3",
             "stateMutability": "view",
             "superFunction": null,
@@ -1314,28 +1314,28 @@
           {
             "body": null,
             "documentation": "Indicates that this is a factory contract. Ideally would use EIP 165 supportsInterface()",
-            "id": 714,
+            "id": 764,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "supportsFactoryInterface",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 710,
+              "id": 760,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1288:2:3"
             },
             "returnParameters": {
-              "id": 713,
+              "id": 763,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 712,
+                  "id": 762,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 714,
+                  "scope": 764,
                   "src": "1314:4:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1344,7 +1344,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 711,
+                    "id": 761,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "1314:4:3",
@@ -1359,7 +1359,7 @@
               ],
               "src": "1313:6:3"
             },
-            "scope": 740,
+            "scope": 790,
             "src": "1255:65:3",
             "stateMutability": "view",
             "superFunction": null,
@@ -1368,28 +1368,28 @@
           {
             "body": null,
             "documentation": "Indicates the Wyvern schema name for assets in this lootbox, e.g. \"ERC1155\"",
-            "id": 719,
+            "id": 769,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "factorySchemaName",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 715,
+              "id": 765,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1451:2:3"
             },
             "returnParameters": {
-              "id": 718,
+              "id": 768,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 717,
+                  "id": 767,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 719,
+                  "scope": 769,
                   "src": "1477:13:3",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1398,7 +1398,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 716,
+                    "id": 766,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1477:6:3",
@@ -1413,7 +1413,7 @@
               ],
               "src": "1476:15:3"
             },
-            "scope": 740,
+            "scope": 790,
             "src": "1425:67:3",
             "stateMutability": "view",
             "superFunction": null,
@@ -1422,22 +1422,22 @@
           {
             "body": null,
             "documentation": "@dev Mints asset(s) in accordance to a specific address with a particular \"option\". This should be\ncallable only by the contract owner or the owner's Wyvern Proxy (later universal login will solve this).\nOptions should also be delineated 0 - (numOptions() - 1) for convenient indexing.\n@param _optionId the option id\n@param _toAddress address of the future owner of the asset(s)\n@param _amount amount of the option to mint\n@param _data Extra data to pass during safeTransferFrom",
-            "id": 730,
+            "id": 780,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "mint",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 728,
+              "id": 778,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 721,
+                  "id": 771,
                   "name": "_optionId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 730,
+                  "scope": 780,
                   "src": "2065:17:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1446,7 +1446,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 720,
+                    "id": 770,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "2065:7:3",
@@ -1460,10 +1460,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 723,
+                  "id": 773,
                   "name": "_toAddress",
                   "nodeType": "VariableDeclaration",
-                  "scope": 730,
+                  "scope": 780,
                   "src": "2092:18:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1472,7 +1472,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 722,
+                    "id": 772,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2092:7:3",
@@ -1487,10 +1487,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 725,
+                  "id": 775,
                   "name": "_amount",
                   "nodeType": "VariableDeclaration",
-                  "scope": 730,
+                  "scope": 780,
                   "src": "2120:15:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1499,7 +1499,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 724,
+                    "id": 774,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "2120:7:3",
@@ -1513,10 +1513,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 727,
+                  "id": 777,
                   "name": "_data",
                   "nodeType": "VariableDeclaration",
-                  "scope": 730,
+                  "scope": 780,
                   "src": "2145:20:3",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -1525,7 +1525,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 726,
+                    "id": 776,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "2145:5:3",
@@ -1541,12 +1541,12 @@
               "src": "2055:116:3"
             },
             "returnParameters": {
-              "id": 729,
+              "id": 779,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2180:0:3"
             },
-            "scope": 740,
+            "scope": 790,
             "src": "2042:139:3",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1555,22 +1555,22 @@
           {
             "body": null,
             "documentation": "////",
-            "id": 739,
+            "id": 789,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "balanceOf",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 735,
+              "id": 785,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 732,
+                  "id": 782,
                   "name": "_owner",
                   "nodeType": "VariableDeclaration",
-                  "scope": 739,
+                  "scope": 789,
                   "src": "2421:14:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1579,7 +1579,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 731,
+                    "id": 781,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "2421:7:3",
@@ -1594,10 +1594,10 @@
                 },
                 {
                   "constant": false,
-                  "id": 734,
+                  "id": 784,
                   "name": "_optionId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 739,
+                  "scope": 789,
                   "src": "2437:17:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1606,7 +1606,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 733,
+                    "id": 783,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "2437:7:3",
@@ -1622,15 +1622,15 @@
               "src": "2420:35:3"
             },
             "returnParameters": {
-              "id": 738,
+              "id": 788,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 737,
+                  "id": 787,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 739,
+                  "scope": 789,
                   "src": "2503:7:3",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1639,7 +1639,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 736,
+                    "id": 786,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "2503:7:3",
@@ -1654,14 +1654,14 @@
               ],
               "src": "2502:9:3"
             },
-            "scope": 740,
+            "scope": 790,
             "src": "2402:110:3",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 741,
+        "scope": 791,
         "src": "226:2386:3"
       }
     ],
@@ -1673,7 +1673,7 @@
   },
   "networks": {},
   "schemaVersion": "3.3.0",
-  "updatedAt": "2021-04-09T04:24:47.056Z",
+  "updatedAt": "2021-04-11T14:22:56.864Z",
   "devdoc": {
     "methods": {
       "canMint(uint256,uint256)": {

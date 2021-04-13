@@ -1,6 +1,6 @@
 const { expect, assert } = require('chai')
 
-const Bullion = artifacts.require('BullionItem')
+const Bullion = artifacts.require('BullionIssue')
 
 
 require('chai')

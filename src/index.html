@@ -27,8 +27,49 @@
         />
       </div>
     </div>
+
+    <div
+      id="bullion-admin-mint"
+      class="misc-pub-section"
+      style="overflow: hidden"
+    >
+      <div class="publishing-action">
+        <input
+          type="button"
+          accesskey="p"
+          tabindex="5"
+          value="Deploy New Contract!"
+          class="button-primary mint-btn"
+          id="custom"
+          name="publish"
+          v-on:click="attemptDeploy"
+        />
+      </div>
+    </div>
+
+    <div
+      id="bullion-admin-mint"
+      class="misc-pub-section"
+      style="overflow: hidden"
+    >
+      <div class="publishing-action">
+        <input
+          type="button"
+          accesskey="p"
+          tabindex="5"
+          value="Create Token!"
+          class="button-primary mint-btn"
+          id="custom"
+          name="publish"
+          v-on:click="createToken"
+        />
+      </div>
+    </div>
+
+
+
   </div>
 
-    <script src="./main.js  "></script>
+    <script src="./main.js"></script>
   </body>
 </html>

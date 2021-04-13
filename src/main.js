@@ -1,13 +1,33 @@
-import { ethers } from "ethers";
-import tokenContract from '../build/contracts/BullionCollectible.json';
+import { ContractFactory, ethers } from "ethers";
+import BullionIssueContract from '../build/contracts/BullionIssue.json';
+// import BullionCollectibleContract from '../build/contracts/BullionCollectible.json';
 import Vue from 'vue'
+import WooCommerceRestApi from "@woocommerce/woocommerce-rest-api";
+ 
+const WcApi = new WooCommerceRestApi({
+  url: "https://bullion.ng",
+  consumerKey: "ck_2bb56d8cee9a43b46ab468d8dec3494d1c6da31b",
+  consumerSecret: "cs_0c150157f0b31a4a480ceb71cee7bbbbf4b7d369",
+  version: "wc/v3"
+});
 
 
 const startApp = async () => {
   return await ethereum.request({ method: "eth_chainId" });
 };
 
-
+async function createToken (self) {
+  const BullionInstance = new ethers.Contract(
+    self.web3ctx.activeWallet,
+      self.myToken.abi,
+      self.signer
+  );
+  const deployed = await BullionInstance.deployed()
+  const trx =  await deployed.createToken('DAVID HOGG', 'PIM')
+  await trx.wait()
+  const receipt =  await trx.receipt.getTransactionReceipt()
+  return receipt
+}
 
 function exists(s) {
   let chk = (s ? s.toString() : '');
@@ -26,7 +46,7 @@ const checkNetwork = async (provider, vueInstance) => {
   myContext.activeWallet = accounts[0];
   myContext.lastBlockNumber = await provider.getBlockNumber();
   myContext.currentBalance = await provider.getBalance(accounts[0]);
-
+  
   const { chainId } = await provider.getNetwork();
   myContext.networkId = chainId;
   myContext.networkName = self.web3networks[chainId]
@@ -36,10 +56,10 @@ const checkNetwork = async (provider, vueInstance) => {
     ? self.web3networks[chainId].etherscanUrl
     : "unknown";
 
-  if (tokenContract.networks[chainId]) {
+  if (BullionIssueContract.networks[chainId]) {
     // attempt to load contract address deployed on this network
-    let newAddress = tokenContract.networks[chainId].address
-      ? tokenContract.networks[chainId].address
+    let newAddress = BullionIssueContract.networks[chainId].address
+      ? BullionIssueContract.networks[chainId].address
       : "";
 
     console.log("Using contract at address '" + newAddress + "'");
@@ -98,7 +118,25 @@ async function attemptMint() {
   } catch (e) {
       console.log('Error: ' + e);
   }
-};
+}
+
+async function attemptDeploy(to, signer) {
+  const factory = new ContractFactory(BullionIssueContract.abi, BullionIssueContract.bytecode, signer)
+  const contract = await factory.deploy(to);
+  await contract.deployTransaction.wait()
+  return contract
+}
+
+async function requestProductData (productId) {
+        //get data from WC,0.004016
+
+      
+      // create metadata
+      // uploadMetaData
+      // save url
+  const {data} = await WcApi.get(`products/${productId}`)
+  console.log(data)
+}
 
 
 var App = new Vue({
@@ -137,7 +175,7 @@ var App = new Vue({
     },
     myToken : {
       address: '0x494b2CeE761FdfCd6f5bE1ABefB7A6112B251874',
-      abi: tokenContract.abi,
+      abi: BullionIssueContract.abi,
       imageBuffer: '',
       ipfsImageHash: '',
       ipfsImageUrl: '',
@@ -153,8 +191,15 @@ var App = new Vue({
     }
   }),
   methods: {
+    attemptDeploy() {
+      attemptDeploy( this.web3ctx.activeWallet, this.signer)
+    },
+    createToken() {
+      createToken(this)
+    },
     attemptMint() {
       const thisattemptMint = attemptMint.bind(this)
+      requestProductData()
       thisattemptMint()
     },
     exists,

@@ -13,6 +13,7 @@
   "main": "index.js",
   "dependencies": {
     "@0x/subproviders": "^2.1.4",
+    "@woocommerce/woocommerce-rest-api": "^1.0.1",
     "eth-gas-reporter": "^0.2.17",
     "ethers": "^5.1.0",
     "multi-token-standard": "^0.8.13",
@@ -24,7 +25,8 @@
     "truffle-hdwallet-provider": "1.0.5",
     "vue": "^2.6.12",
     "vue-class-component": "^7.2.6",
-    "web3": "^1.0.0-beta.34"
+    "web3": "^1.0.0-beta.34",
+    "wpapi": "^1.2.1"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.18.0",
